@@ -1378,7 +1378,7 @@ function LuminaraFooter() {
   return (
     <footer className="luminara-footer mt-auto py-3 px-6 flex items-center justify-between text-[10px] text-muted-foreground/40">
       <div className="flex items-center gap-2">
-        <span>Luminara AI</span>
+        <span>Luminara AI 1.1</span>
         <span className="text-muted-foreground/20">•</span>
         <span>Transparent RAG Knowledge Base</span>
       </div>
@@ -4765,7 +4765,7 @@ function ChatPage({ documents, logActivity }: { documents: Document[]; logActivi
                   <div className="absolute -bottom-1 -left-1 h-3 w-3 rounded-full bg-fuchsia-400/10 animate-pulse" style={{ animationDelay: '1s' }} />
                 </motion.div>
                 <h3 className="text-lg font-semibold mb-1.5 page-title-gradient inline-block">Ask anything about your documents</h3>
-                <p className="text-xs text-muted-foreground/40 max-w-md mx-auto mb-5">Luminara AI provides answers with full source citations and transparency.</p>
+                <p className="text-xs text-muted-foreground/40 max-w-md mx-auto mb-5">Luminara AI 1.1 provides answers with full source citations and transparency.</p>
                 <div className="flex flex-wrap gap-1.5 justify-center">{['Q1 2025 priorities?', 'How does auth work?', 'Chunk size strategy?', 'Security requirements?'].map(q => (<button key={q} onClick={() => setInput(q)} className="px-2.5 py-1.5 rounded-full text-[10px] bg-white/[0.02] border border-white/[0.06] hover:border-violet-500/30 hover:bg-violet-500/5 hover:shadow-[0_0_8px_rgba(139,92,246,0.08)] transition-all">{q}</button>))}</div>
               </div>
             )}
@@ -4778,7 +4778,7 @@ function ChatPage({ documents, logActivity }: { documents: Document[]; logActivi
               return (
                 <motion.div key={msg.id || i} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className="max-w-[85%]">
-                    {msg.role === 'assistant' && <div className="flex items-center gap-1.5 mb-1"><div className="h-5 w-5 rounded-md bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center avatar-glow"><Sparkles className="h-2.5 w-2.5 text-white" /></div><span className="text-[9px] text-muted-foreground/50 font-medium">Luminara AI</span>{msg.mode && <Badge variant="outline" className="text-[7px] px-1 py-0 bg-white/[0.02] border-white/[0.06]">{msg.mode}</Badge>}{(isStreamingMsg || (isLastAssistant && !typewriterDone)) && <div className="flex items-center gap-0.5 ml-1"><motion.div className="h-1.5 w-1.5 rounded-full bg-violet-400" animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }} transition={{ duration: 0.8, repeat: Infinity, delay: 0 }} /><motion.div className="h-1.5 w-1.5 rounded-full bg-violet-400" animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }} transition={{ duration: 0.8, repeat: Infinity, delay: 0.15 }} /><motion.div className="h-1.5 w-1.5 rounded-full bg-violet-400" animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }} transition={{ duration: 0.8, repeat: Infinity, delay: 0.3 }} /></div>}</div>}
+                    {msg.role === 'assistant' && <div className="flex items-center gap-1.5 mb-1"><div className="h-5 w-5 rounded-md bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center avatar-glow"><Sparkles className="h-2.5 w-2.5 text-white" /></div><span className="text-[9px] text-muted-foreground/50 font-medium">Luminara AI 1.1</span>{msg.mode && <Badge variant="outline" className="text-[7px] px-1 py-0 bg-white/[0.02] border-white/[0.06]">{msg.mode}</Badge>}{(isStreamingMsg || (isLastAssistant && !typewriterDone)) && <div className="flex items-center gap-0.5 ml-1"><motion.div className="h-1.5 w-1.5 rounded-full bg-violet-400" animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }} transition={{ duration: 0.8, repeat: Infinity, delay: 0 }} /><motion.div className="h-1.5 w-1.5 rounded-full bg-violet-400" animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }} transition={{ duration: 0.8, repeat: Infinity, delay: 0.15 }} /><motion.div className="h-1.5 w-1.5 rounded-full bg-violet-400" animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }} transition={{ duration: 0.8, repeat: Infinity, delay: 0.3 }} /></div>}</div>}
                     <div className={`rounded-2xl px-4 py-3 text-[12px] leading-relaxed relative group ${msg.role === 'user' ? 'user-message-bg text-white' : isStreamingMsg ? 'assistant-message-bg streaming-response' : 'assistant-message-bg'} ${isBookmarked(msg.id) ? 'border-l-2 border-l-amber-400/70 bookmarked-msg' : ''}`}>
                       <div className="prose prose-invert prose-sm max-w-none prose-headings:text-foreground prose-p:my-1 prose-pre:my-1.5 prose-pre:bg-white/[0.03] prose-pre:border prose-pre:border-white/[0.06] prose-code:text-violet-300 prose-code:before:content-[''] prose-code:after:content-[''] prose-strong:text-foreground/90 prose-em:text-fuchsia-300 prose-a:text-violet-400 prose-li:my-0.5 prose-ul:my-1 prose-ol:my-1">
                         {chatSearchActive && chatSearchQuery.trim() ? (
@@ -7823,7 +7823,7 @@ function KeyboardShortcutsDialog({ open, onClose }: { open: boolean; onClose: ()
               </div>
               <div>
                 <span className="text-base font-bold bg-gradient-to-r from-violet-200 to-fuchsia-200 bg-clip-text text-transparent">Keyboard Shortcuts</span>
-                <p className="text-[10px] text-muted-foreground/40 font-normal mt-0.5">Navigate Luminara AI faster</p>
+                <p className="text-[10px] text-muted-foreground/40 font-normal mt-0.5">Navigate Luminara AI 1.1 faster</p>
               </div>
             </DialogTitle>
           </DialogHeader>
@@ -7898,7 +7898,7 @@ function WelcomePanel({ onNavigate }: { onNavigate: (page: PageView) => void }) 
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-2.5">
               <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center shadow-lg shadow-violet-500/25"><Rocket className="h-4 w-4 text-white" /></div>
-              <div><h3 className="text-sm font-bold bg-gradient-to-r from-violet-200 to-fuchsia-200 bg-clip-text text-transparent">Welcome to Luminara AI</h3><p className="text-[9px] text-muted-foreground/40">Your intelligent RAG knowledge base</p></div>
+              <div><h3 className="text-sm font-bold bg-gradient-to-r from-violet-200 to-fuchsia-200 bg-clip-text text-transparent">Welcome to Luminara AI 1.1</h3><p className="text-[9px] text-muted-foreground/40">Your intelligent RAG knowledge base</p></div>
             </div>
             <Button variant="ghost" size="icon" className="h-6 w-6 shrink-0 text-muted-foreground/30 hover:text-foreground" onClick={handleDismiss}><X className="h-3.5 w-3.5" /></Button>
           </div>
@@ -8350,7 +8350,7 @@ function useOnboarding() {
 const ONBOARDING_STEPS = [
   {
     target: '[data-onboarding="sidebar"]',
-    title: 'Welcome to Luminara AI',
+    title: 'Welcome to Luminara AI 1.1',
     description: 'Your intelligent RAG knowledge base. Navigate between pages, monitor system health, and access the command palette — all from the sidebar.',
     icon: Sparkles,
     position: 'right' as const,
@@ -8699,7 +8699,7 @@ export default function LuminaraApp() {
             <Sparkles className="h-7 w-7 text-white relative z-10" />
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 breathing-glow blur-md" />
           </div>
-          <h2 className="text-lg font-bold bg-gradient-to-r from-violet-300 to-fuchsia-300 bg-clip-text text-transparent">Luminara AI</h2>
+          <h2 className="text-lg font-bold bg-gradient-to-r from-violet-300 to-fuchsia-300 bg-clip-text text-transparent">Luminara AI 1.1</h2>
           <p className="text-xs text-muted-foreground/40 mt-1.5">Initializing knowledge base…</p>
           <div className="flex justify-center mt-3 gap-1">{[0, 1, 2].map(i => <motion.div key={i} className="h-1.5 w-1.5 rounded-full bg-violet-400" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }} />)}</div>
         </motion.div>

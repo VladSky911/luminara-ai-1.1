@@ -15,10 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Luminara AI — Transparent RAG Knowledge Base",
+  title: "Luminara AI 1.1 — Transparent RAG Knowledge Base",
   description: "AI-powered knowledge base with source citations, retrieval tracing, and confidence scoring. Built for teams that need answers grounded in their own documents.",
-  keywords: ["RAG", "Knowledge Base", "AI", "Vector Search", "Document Search", "Luminara"],
-  authors: [{ name: "Luminara AI Team" }],
+  keywords: ["RAG", "Knowledge Base", "AI", "Vector Search", "Document Search", "Luminara", "Luminara AI 1.1"],
+  authors: [{ name: "Luminara AI 1.1 Team" }],
   icons: {
     icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
