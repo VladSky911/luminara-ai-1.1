@@ -1359,15 +1359,15 @@ function BreadcrumbBar({ currentPage, onNavigate }: { currentPage: PageView; onN
   }
 
   return (
-    <div className="breadcrumb-bar py-2 px-4 hidden lg:flex items-center gap-1.5 text-[11px]">
+    <div className="py-2 px-4 hidden lg:flex items-center gap-1.5 text-[11px] dark:bg-black/30 bg-white/50 dark:border-b dark:border-white/[0.06] border-b border-black/[0.06] backdrop-blur-sm">
       <button
         onClick={() => onNavigate('dashboard')}
-        className="text-muted-foreground/50 hover:text-foreground transition-colors font-medium"
+        className="dark:text-white/50 text-muted-foreground/60 hover:text-foreground transition-colors font-medium"
       >
         Luminara
       </button>
-      <ChevronRight className="h-3 w-3 text-muted-foreground/25" />
-      <span className="text-violet-400 font-semibold">{pageLabels[currentPage]}</span>
+      <ChevronRight className="h-3 w-3 dark:text-white/25 text-muted-foreground/30" />
+      <span className="dark:text-violet-400 text-violet-600 font-semibold">{pageLabels[currentPage]}</span>
     </div>
   )
 }
@@ -1376,7 +1376,7 @@ function BreadcrumbBar({ currentPage, onNavigate }: { currentPage: PageView; onN
 
 function LuminaraFooter() {
   return (
-    <footer className="luminara-footer mt-auto py-3 px-6 flex items-center justify-between text-[10px] text-muted-foreground/40">
+    <footer className="mt-auto py-3 px-6 flex items-center justify-between text-[10px] text-muted-foreground/40 dark:bg-black/20 bg-white/50 dark:border-t dark:border-white/[0.04] border-t border-black/[0.06] backdrop-blur-sm">
       <div className="flex items-center gap-2">
         <span>Luminara AI 1.1</span>
         <span className="text-muted-foreground/20">•</span>
