@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Document {
+  id          String   @id @default(cuid())
+  name        String
+  type        String   // pdf, docx, txt, md
+  status      String   @default("pending") // pending, processing, indexed, failed
+  fileSize    Int      @default(0)
+  chunkCount  Int      @default(0)
+  content     String?  // raw extracted text
+  metadata    String?  // JSON string for extra metadata
+  tags        String   @default("") // comma-separated tags
+  errorMessage String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  chunks      Chunk[]
+}
+
+model Chunk {
+  id          String   @id @default(cuid())
+  documentId  String
+  content     String
+  chunkIndex  Int
+  tokenCount  Int      @default(0)
+  metadata    String?  // JSON string for chunk-level metadata
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  document    Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+}
+
+model ChatSession {
+  id        String   @id @default(cuid())
+  title     String   @default("New Chat")
+  mode      String   @default("balanced") // strict, balanced, creative
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  messages  ChatMessage[]
+}
+
+model ChatMessage {
+  id        String   @id @default(cuid())
+  sessionId String
+  role      String   // user, assistant
+  content   String
+  citations String?  // JSON string with citation data
+  sources   String?  // JSON string with source chunks data
+  mode      String?  // strict, balanced, creative
+  createdAt DateTime @default(now())
+  session   ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+}
+
+model WorkspaceSetting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+}
