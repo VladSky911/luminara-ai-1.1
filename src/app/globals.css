@@ -899,14 +899,24 @@ button:active:not(:disabled) {
 
 /* ==================== BREADCRUMB STYLES ==================== */
 .breadcrumb-bar {
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
+}
+
+.breadcrumb-bar span,
+.breadcrumb-bar button {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 :root .breadcrumb-bar {
   background: rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+:root .breadcrumb-bar span,
+:root .breadcrumb-bar button {
+  color: inherit;
 }
 
 /* ==================== FOOTER STYLES ==================== */

@@ -574,7 +574,7 @@ function Sidebar({ currentPage, onNavigate, collapsed, onToggle, onOpenCommandPa
       initial={false}
       animate={{ width: collapsed ? 68 : sidebarWidth }}
       transition={{ duration: isResizing ? 0 : 0.25, ease: [0.4, 0, 0.2, 1] }}
-      className={`min-h-screen border-r border-white/[0.06] bg-black/20 backdrop-blur-sm flex flex-col shrink-0 overflow-hidden relative z-20 ${isResizing ? 'select-none' : ''}`}
+      className={`min-h-screen border-r border-white/[0.06] dark:bg-black/20 bg-white/60 backdrop-blur-sm flex flex-col shrink-0 overflow-hidden relative z-20 ${isResizing ? 'select-none' : ''}`}
       style={isResizing ? { userSelect: 'none' } : undefined}
     >
       {/* Logo */}
@@ -590,7 +590,7 @@ function Sidebar({ currentPage, onNavigate, collapsed, onToggle, onOpenCommandPa
           {!collapsed && (
             <motion.div initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -8 }} transition={{ duration: 0.15 }} className="flex-1">
               <h1 className="text-xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-violet-300 via-purple-200 to-fuchsia-300 bg-clip-text text-transparent">Luminara</span>
+                <span className="bg-gradient-to-r from-violet-600 via-purple-500 to-fuchsia-600 dark:from-violet-300 dark:via-purple-200 dark:to-fuchsia-300 bg-clip-text text-transparent">Luminara</span>
               </h1>
               <p className="text-[9px] text-muted-foreground/50 tracking-[0.2em] uppercase font-medium">AI Knowledge Base</p>
             </motion.div>
@@ -616,11 +616,11 @@ function Sidebar({ currentPage, onNavigate, collapsed, onToggle, onOpenCommandPa
                     onClick={() => onNavigate(item.id)}
                     data-onboarding={onboardingAttr}
                     className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 group relative ${
-                      isActive ? 'bg-gradient-to-r from-violet-500/15 to-fuchsia-500/10 text-violet-200 sidebar-active-glow' : 'text-muted-foreground/60 hover:text-foreground hover:bg-white/[0.03]'
+                      isActive ? 'bg-gradient-to-r from-violet-500/15 to-fuchsia-500/10 dark:text-violet-200 text-violet-700 sidebar-active-glow' : 'text-muted-foreground/60 hover:text-foreground dark:hover:bg-white/[0.03] hover:bg-black/[0.03]'
                     }`}
                   >
                     {isActive && <motion.div layoutId="sidebar-active" className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 rounded-r-full bg-gradient-to-b from-violet-400 to-fuchsia-400" transition={{ type: 'spring', stiffness: 300, damping: 30 }} />}
-                    <Icon className={`h-4 w-4 shrink-0 transition-colors ${isActive ? 'text-violet-400' : 'text-muted-foreground/50 group-hover:text-foreground/70'}`} />
+                    <Icon className={`h-4 w-4 shrink-0 transition-colors ${isActive ? 'dark:text-violet-400 text-violet-600' : 'text-muted-foreground/50 group-hover:text-foreground/70'}`} />
                     <AnimatePresence>
                       {!collapsed && (
                         <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="truncate">
